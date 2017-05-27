@@ -51,7 +51,7 @@ class SubscriptionForm extends React.Component {
 
   render() {
     return (
-      <Form className="form" onSubmit={this.submit.bind(this)}>
+      <Form className="form" onSubmit={this.submit.bind(this)} loading={this.props.loading}>
         <Header as="h3">Subscription</Header>
         <Form.Field>
           <label>Name</label>
@@ -73,7 +73,8 @@ class SubscriptionForm extends React.Component {
 }
 
 SubscriptionForm.propTypes = {
-  toggleVisibility: PropTypes.func.isRequired, 
+  toggleVisibility: PropTypes.func.isRequired,
   subscribe: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
 }
 export default SubscriptionForm;

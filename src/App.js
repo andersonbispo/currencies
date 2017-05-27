@@ -15,11 +15,12 @@ class App extends Component {
       currencies: [],
       successMessage: "",
       errorMessage: "",
+      loading: false,
     }
   }
 
   showMessage(type, message) {
-    let newState = {visible: false};
+    let newState = {visible: false, loading: false};
     newState[type] = message;
     this.setState(newState);
     setTimeout(() => {
@@ -72,8 +73,9 @@ class App extends Component {
   }
 
   subscribe(name, email) {
+    this.setState({loading: true});
     axios.post(
-      'http://demo3643409.mockable.io/newsletter', 
+      'http://demo3643409.mockable.io/newsletter',
       {name, email},
       {headers: {'authentication': 'desafiobeetech'}}
     ).then((response) => {
@@ -122,9 +124,10 @@ class App extends Component {
             visible={this.state.visible}
             vertical
           >
-            <SubscriptionForm 
-              toggleVisibility={this.toggleVisibility.bind(this)} 
+            <SubscriptionForm
+              toggleVisibility={this.toggleVisibility.bind(this)}
               subscribe={this.subscribe.bind(this)}
+              loading={this.state.loading}
             />
           </Sidebar>
           <Sidebar.Pusher>
