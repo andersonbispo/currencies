@@ -1,0 +1,14 @@
+.form {
+  width: 100%;
+  padding: 10px;
+}
+
+.form__buttons {
+  float: right;
+  margin-right: 0px;
+}
+
+.form__field-error {
+  color: red;
+  font-size: 10px;
+}

@@ -9,13 +9,3 @@
   position: absolute;
   z-index: 10;
 }
-
-.app__form {
-  width: 100%;
-  padding: 10px;
-}
-
-.app__form-buttons {
-  float: right;
-  margin-right: 0px;
-}
