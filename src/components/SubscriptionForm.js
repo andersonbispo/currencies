@@ -55,12 +55,22 @@ class SubscriptionForm extends React.Component {
         <Header as="h3">Subscription</Header>
         <Form.Field>
           <label>Name</label>
-          <Input placeholder="Name" onChange={this.handleOnChangeName.bind(this)} error={this.state.errorName !== ''} />
+          <Input 
+            placeholder="Name"
+            value={this.state.name}
+            onChange={this.handleOnChangeName.bind(this)}
+            error={this.state.errorName !== ''}
+          />
           {this.state.errorName !== '' ? <p className="form__field-error">{this.state.errorName}</p> : ''}
         </Form.Field>
         <Form.Field>
           <label>Email</label>
-          <Input placeholder="Email" onChange={this.handleOnChangeEmail.bind(this)} error={this.state.errorEmail !== ''}  />
+          <Input 
+            placeholder="Email"
+            value={this.state.email}
+            onChange={this.handleOnChangeEmail.bind(this)}
+            error={this.state.errorEmail !== ''}
+          />
           {this.state.errorEmail !== '' ? <p className="form__field-error">{this.state.errorEmail}</p> : ''}
         </Form.Field>
         <Form.Group className="form__buttons">
