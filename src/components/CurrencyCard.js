@@ -1,14 +1,16 @@
 import React from 'react';
 import { Card, Image, Icon, Statistic } from 'semantic-ui-react';
 
+import './CurrencyCard.css';
+
 const CurrencyCard = ({}) => (
   <Card centered>
-    <Icon style={{margin: '20px auto'}} name="dollar" size="massive"/>
+    <Icon className="card__icon" name="dollar" size="massive"/>
     <Card.Content>
       <Card.Header>
-        <Image 
+        <Image
+          className="card__image"
           src="https://s3-sa-east-1.amazonaws.com/beecambioimages/currency-flags/USD.png"
-          style={{marginRight: '10px'}}
         />
         US$
       </Card.Header>
@@ -17,13 +19,13 @@ const CurrencyCard = ({}) => (
       </Card.Meta>
       <Card.Description>
         <Statistic.Group>
-          <Statistic color='orange' style={{width: '100%'}}>
-            <Statistic.Value style={{textAlign: 'center', width: '100%'}}>1500.00</Statistic.Value>
-            <Statistic.Label style={{textAlign: 'center', width: '100%'}}><Icon name='calculator'/>Quantity</Statistic.Label>
-          </Statistic>                  
-          <Statistic color='olive' style={{width: '100%', margin: '0'}}>
-            <Statistic.Value style={{textAlign: 'center', width: '100%'}}>4932.47</Statistic.Value>
-            <Statistic.Label style={{textAlign: 'center', width: '100%'}}><Icon name='money'/>Total Quotation</Statistic.Label>
+          <Statistic className="card__values" size='tiny' color='orange'>
+            <Statistic.Value>1500.00</Statistic.Value>
+            <Statistic.Label><Icon name='calculator'/>Quantity</Statistic.Label>
+          </Statistic>
+          <Statistic className="card__values" size='tiny' color='olive'>
+            <Statistic.Value>4932.47</Statistic.Value>
+            <Statistic.Label><Icon name='money'/>Total Quotation</Statistic.Label>
           </Statistic>
         </Statistic.Group>
       </Card.Description>
